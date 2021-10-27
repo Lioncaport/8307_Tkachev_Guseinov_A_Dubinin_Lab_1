@@ -1,7 +1,7 @@
 public class Peak {
     private char[][] State;
     private Peak Parent_Node;
-    private char Action;
+    private String Action;
     private int Depth;
 
     public Peak(){
@@ -10,7 +10,7 @@ public class Peak {
         Depth = 0;
     }
 
-    public Peak(char[][] state, Peak parent_Node, char action, int depth) {
+    public Peak(char[][] state, Peak parent_Node, String action, int depth) {
         this();
         State = state;
         Parent_Node = parent_Node;
@@ -26,7 +26,7 @@ public class Peak {
         return Parent_Node;
     }
 
-    public char getAction() {
+    public String getAction() {
         return Action;
     }
 
@@ -38,12 +38,22 @@ public class Peak {
         Parent_Node = parent_Node;
     }
 
-    public void setAction(char action) {
-        if (action == 'R') {
-            Action = 'L';
+    public void setAction(String action) {
+        Action = action;
+    }
+
+    public void setActionT2(String action) {
+        if (action == "Вправо") {
+            Action = "Влево";
+        }
+        else if (action == "Влево") {
+            Action = "Вправо";
+        }
+        else if (action == "Вниз") {
+            Action = "Вверх";
         }
         else {
-
+            Action = "Вниз";
         }
     }
 
